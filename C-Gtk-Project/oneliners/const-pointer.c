@@ -7,10 +7,7 @@ int main(void)
   const int *ptr = &i;
 
   printf("ptr: %d\n", *ptr);
-  /* error: object pointed cannot be modified
-     using the pointer ptr */
-  *ptr = 100;
-
+  *ptr = 100;   /* error: object pointed cannot be modified using the pointer ptr */
   ptr = &j;		 /* valid */
   printf("ptr: %d\n", *ptr);
 
