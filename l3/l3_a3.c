@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 
-
+// FIXME: this stuff is irreppairably broken
 double m_power(double x, int n){ // x^n
 
   if(x==0&&n==0){

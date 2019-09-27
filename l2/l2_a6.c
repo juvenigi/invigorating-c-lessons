@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
+/* this was taken straight outta StackOverflow */
+
 int MAX = 1000;
 
 double cosine(int i, double x){

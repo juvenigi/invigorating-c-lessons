@@ -1,5 +1,4 @@
 #include <stdio.h>
-//#include <string.h>
 #include <math.h>
 
 const double ee = 2.71828182846;

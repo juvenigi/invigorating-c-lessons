@@ -1,12 +1,10 @@
 #include <stdio.h>
-//#include <string.h>
 #include <math.h>
 
 int main(void){
   int c = 100;
-  //double sqrt_c = sqrt(100);
   int n = 2;
-  while(1){
+  while(1){ // don't write complicated code in an infinite loop, for your sanity's sake!
     if(n >  sqrt( (double) c) ){
       printf("true!");
       break;
