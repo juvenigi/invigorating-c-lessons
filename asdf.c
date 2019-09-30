@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include<math.h>
 
+/* advanced code written by an expert mathematician */
+
+
 int main(){
 
 double x,y;
