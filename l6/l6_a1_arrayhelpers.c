@@ -3,18 +3,29 @@
 
 #define _intarray_init(ex,elen) int * (ex) = malloc(sizeof(int) * (elen))
 
+/*
+  Array helpers
+*/
+
+
 //for freeing arrays, just use free(array)
+void setarr(int * array, int array_length, int value);
 
-
-/* Array helpers */
 
 void initarray(int ** pointer,int length){ // FIXME: something is cheesy here
-  int * array = (int *) malloc(sizeof(int) * length);
-  pointer = &array;
-  return;
+ int * array = (int *) malloc(sizeof(int) * length);
+ //setarr(array, length, 0);
+ *pointer = array;
+ return;
 }
 
-int * initarray2(int length){
+/* this one does though */
+/* void initarray(int ** pointer,int length){ // FIXME: something is cheesy here */
+/*   *pointer = (int *) malloc(sizeof(int) * length); */
+/*   return; */
+/* } */
+
+int * mylloc(int length){
   return (int *) malloc (sizeof(int)*length);
 }
 
@@ -34,18 +45,18 @@ void setarr(int * array, int array_length, int value){
 }
 
 int iwrap(int n, int array_length){
-  int i_max = array_length-1;
-  if(n>i_max){
+  if(n>array_length-1){
     return n-array_length;
   }
   else if(n<0) {
-    return i_max+n+1;
+    return n+array_length;
   }
   else{
     return n;
   }
 }
 
+//TODO: implement properly for all kinds of shitfts
 void arrot_k_pos(int * array, int array_length, int rot_k){
   int * rot_temp = (int *) malloc(sizeof(int)*rot_k);
 
@@ -104,18 +115,13 @@ int locate_seq(int * array, int array_length, int * array_seq, int array_seq_len
 
 }
 int main(void){
-  //int * dynarray=NULL;
-  //int dynarray_l=5;
-  //_intarray_init(dynarray,dynarray_l);
-  //dynarray[0]=5;
-  //setarr(dynarray,dynarray_l,5);
-  //printf("%i\n",dynarray[0]);
-  //printarr(0,dynarray_l,dynarray);
-  //printarr(1,dynarray_l,dynarray);
-
-  int * arrpointer=NULL;
+  //int toast[3] = {1,2,3};
+  int * arrpointer;
+  int * arr2 = initarray2(6);
   initarray(&arrpointer,3);
-  printf("%i\n",arrpointer==NULL);
+  //arrpointer = {1,2,3};
+  arrpointer[0] = 2;
+  printf("%i\n",arrpointer[0]);
   //printarr(0,3,arrpointer);
 
 
