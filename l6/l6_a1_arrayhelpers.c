@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include"array_helpers.h"
 
 #define _intarray_init(ex,elen) int * (ex) = malloc(sizeof(int) * (elen))
 
@@ -11,37 +12,27 @@
 //for freeing arrays, just use free(array)
 void setarr(int * array, int array_length, int value);
 
-
 void initarray(int ** pointer,int length){ // FIXME: something is cheesy here
- int * array = (int *) malloc(sizeof(int) * length);
- //setarr(array, length, 0);
- *pointer = array;
- return;
+  *pointer = (int *) malloc(sizeof(int) * length);
+  return;
 }
-
-/* this one does though */
-/* void initarray(int ** pointer,int length){ // FIXME: something is cheesy here */
-/*   *pointer = (int *) malloc(sizeof(int) * length); */
-/*   return; */
-/* } */
 
 int * mylloc(int length){
   return (int *) malloc (sizeof(int)*length);
 }
 
-void printarr(int mode, int arr_len, int * in_array){
-  for(int i=0;i<arr_len;i++){
-    printf("%i",in_array[i]);
+void print_int_arr(int mode, int arr_len, int * array){
+  for(int i=0+!(!(mode));i<arr_len;i++){
+    printf("%i",array[i]);
     if(mode){printf(", ");}else{printf("\n");}
   }
-  if(mode){printf("\n");}
+  if(mode){printf("%i,\n",array[arr_len-1]);}
 }
 
-void setarr(int * array, int array_length, int value){
+void setintarr(int * array, int array_length, int value){
   for(int i=0; i<array_length; i++){
     array[i]=value;
   }
-  return;
 }
 
 int iwrap(int n, int array_length){
@@ -57,7 +48,7 @@ int iwrap(int n, int array_length){
 }
 
 //TODO: implement properly for all kinds of shitfts
-void arrot_k_pos(int * array, int array_length, int rot_k){
+void shiftarr_swapper_pos(int * array, int array_length, int rot_k){
   int * rot_temp = (int *) malloc(sizeof(int)*rot_k);
 
   for(int i = array_length-1,j=rot_k-1;i>array_length-1-rot_k;i--,j--){
@@ -74,7 +65,7 @@ void arrot_k_pos(int * array, int array_length, int rot_k){
   return;
 }
 
-void arrot_k(int * array, int array_length, int rot_k){
+void shiftarr(int * array, int array_length, int rot_k){
   int * rot_arr = (int *) malloc(sizeof(int)*array_length);
   int iw=0;
   for(int i=0; i<array_length; ++i){
@@ -87,7 +78,7 @@ void arrot_k(int * array, int array_length, int rot_k){
   return;
 }
 
-void arflip(int * array, int array_length){
+void fliparr(int * array, int array_length){
   int t=0; // temporary
   int fli=0;
   for(int i = 0; i<(array_length)/2;i++){
