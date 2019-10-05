@@ -22,5 +22,5 @@ int locate_seq(int * array, int array_length, int * array_seq, int array_seq_len
 #endif /* ARRAYHELPERS_H*/
 
 #ifndef _ARRAY_INIT
-#define _array_init(_x,_len,_t) int * (_x) = malloc(sizeof(_t) * (_len))
+#define _array_init(_x,_len,_t) (_t) * (_x) =((_t) *) malloc(sizeof(_t) * (_len))
 #endif /* ARRAY_INIT */

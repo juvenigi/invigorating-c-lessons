@@ -21,6 +21,7 @@
 
 /* } */
 
+
 double * binomialsolve(double sq_coeff, double lin_coeff, double third_coeff){
   static double r_vals[2];
     for(int i=0;i<=1;i++){

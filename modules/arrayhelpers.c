@@ -10,7 +10,7 @@
 
 
 //for freeing arrays, just use free(array)
-void setarr(int * array, int array_length, int value);
+//void setarr(int * array, int array_length, int value);
 
 void initarray(int ** pointer,int length){ // FIXME: something is cheesy here
   *pointer = (int *) malloc(sizeof(int) * length);
@@ -35,7 +35,7 @@ void setintarr(int * array, int array_length, int value){
   }
 }
 
-int iwrap(int n, int array_length){
+int iwrap(int n, int array_length){ //TODO: add starting_index as an optional argument
   if(n>array_length-1){
     return n-array_length;
   }
@@ -105,13 +105,4 @@ int locate_seq(int * array, int array_length, int * array_seq, int array_seq_len
   return -1;
 }
 
-
-
-/* int main(void){ */
-/*   int nums[5] = {1,2,3,4,5}; */
-/*   int nums2[2] = {3,4}; */
-/*   print_int_arr(1,5,nums); */
-/*   print_int_arr(1,2,nums2); */
-/*   printf("%i\n",locate_seq(nums,5,nums2,2)); */
-/*   return 0; */
-/* } */
+//int main(void){return 0;}
