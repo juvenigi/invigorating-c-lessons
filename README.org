@@ -4,12 +4,17 @@
 
   If you are going to use any of this code for your personal project, I don't think your machine can handle the power of =goto= statments.
 
+* Contents
+- /l*n*/, where /n/ is a lesson number (l0 happened before the official courses started, basically me messing with code from Wikipedia) 
+- /genius/ has some expert-level code that only expert mathematicians can comprehend
+- /modules/ contains code useful for multiple lessons at the same time (even though I could have probably done away with lesson folders altogether and used git tags/commit messages)
+
 * TO BE IMPLEMENTED
-  comrehensive documentation of each lesson
-  function pointers for German translation
-  correct implementation of certain functions
-  proper headers and modules (put them into a library)
-  setup make or cmake to compile code without a hassle
-  follow the ISO C standard (redo some code with =-ansi=, I think)
+-  comrehensive documentation of each lesson
+-  function pointers for German translation
+-  correct implementation of certain functions
+-  proper headers and modules (put them into a library)
+-  setup make or cmake to compile code without a hassle
+-  follow the ISO C standard (redo some code with =-ansi=, I think)
 
   
