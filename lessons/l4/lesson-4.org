@@ -1,0 +1,14 @@
+* Fourth lesson in C Programming
+
+We have discovered how headers work, and I have not discovered how to generate them quickly in emacs /(there has got to be a way!)/
+
+* Code
+
+** TASK1: write ==mymath.c== and ==mymath.h== as a user library for math functions that were made till this point (l2-l3)
+** TASK2: write a log(base,x) (in ==mymath==)
+** TASK3: factorial ==mymath==
+** TASK4: kth root
+** TASK5: use cosine law to find a side of a tringle knowing two sides and an enclosing angle.
+** TASK6: binomial equation solver (real roots)
+** TASK7: Reeman Zeta function (real numbers only)
+** TASK8: add all elements of an array together iteratively
