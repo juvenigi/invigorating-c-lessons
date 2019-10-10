@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-
-
 double quickmaffs (double i){
   return i + 2 - 1;
 }

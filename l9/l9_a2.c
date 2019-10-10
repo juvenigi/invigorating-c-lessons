@@ -118,7 +118,7 @@ void write_maze(CELL ** board, int dimx, int dimy, FILE * w){
 }
 
 int main(void){
-  FILE * maze = fopen("./res/maze.txt", "r");
+  FILE * maze = fopen("./res/maze.txt", "r"); // TODO: tr -d '\n' < mazebig2.txt > mazebig2t.txt
   FILE * smaz = fopen("./res/solve.txt", "w");
   int bx = 100; // board's x and y dimensions
   int by = 100;
