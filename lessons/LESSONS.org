@@ -1,5 +1,0 @@
-* Organized lessons
-
-** Contents
-Each folder contains a readme file which has a brief explanation for what the exercise was.
-The rest are symbolic links created to make finding said exercises easier.
