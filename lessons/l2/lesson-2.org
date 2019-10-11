@@ -4,15 +4,18 @@ This time around, it was assumed that people had managed to wrangle their cygwin
 
 Finally, some code!
 
-* Important note:
+** Important note:
 
-I usually disdain from using my own defined math functions, because that potentially introduces a list of stupid bugs that pretty much slow down the coding process. I mean, technically, the code for math functions is supposed to be correct and accurate, but I'd rather have one functioning program than 0 functioning programs because of a screwy algorithm.
+ I usually disdain from using my own defined math functions, because that potentially introduces a list of stupid bugs that pretty much slow down the coding process. I mean, technically, the code for math functions is supposed to be correct and accurate, but I'd rather have one functioning program than 0 functioning programs because of a screwy algorithm.
 
-* Code
-** TASK 1: sum up odd numbers ranging from 1 to 15
-** TASK 2: find errors in a shitty piece of code
-(honestly I just ignore this crap or do it orally)
-** TASK 3: a simple prime number checker
-** TASK 4: a slightly naive square root algorithm
-** TASK 5: greatest common divisor (integer numbers)
-** TASK 6: a cosine function without factorial (because integer overflow happens otherwise)
+** Code
+*** Location
+ [[../../src/helpers/mymath.c]]
+*** Description
+**** TASK 1: sum up odd numbers ranging from 1 to 15
+**** TASK 2: find errors in a shitty piece of code
+  (honestly I just ignore this crap or do it orally)
+**** TASK 3: a simple prime number checker
+**** TASK 4: a slightly naive square root algorithm
+**** TASK 5: greatest common divisor (integer numbers)
+**** TODO TASK 6: a cosine function without factorial (because integer overflow happens otherwise)

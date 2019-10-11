@@ -6,6 +6,10 @@
 #define E 2.71828182845904523536
 #endif /* EULER */
 
+#ifndef PI
+#define PI 3.141592653
+#endif /* PI */
+
 #ifndef BOOL
 #define BOOL
 typedef _Bool bool;
@@ -13,13 +17,9 @@ static const bool true = 1;
 static const bool false = 0;
 #endif /* BOOL */
 
-#ifndef PI
-#define PI 3.141592653
-#endif /* PI */
-
 int my_abs(int a){ // just use abs provided by math.h
   if(a<0){return 0-a;}
-  else{return a;}
+  else   {return a;}
 }
 
 int gauss_up(double number){ // gauss_down is just normal typecasting
@@ -44,43 +44,78 @@ double logbase(double a_base, double value){
 int commondiv(int a,int b){
   while (a!=0&&b!=0){
     if (a>b){a = a-b;}
-    else{b = b-a;}
+    else    {b = b-a;}
   }
-  printf("result: ");
   if(a==0){return b;}
-  else{return a;}
+  else    {return a;}
 }
 
 double rootbase(int wop, double value){
   double power = 1. / (double) wop;
-  return pow(base,power);
+  return pow(value,power);
+}
+
+double mag(double a, double b){ //magnitude
+  if(a>b){
+    return a-b;
+  }else{
+    return b-a;
+  }
+}
+
+double m_sqrt(double value){
+  double x,y = 1.;
+  while(mag(x,y)>10e-8){
+    x = y;
+    y = (x+(value/x))/2;
+  }
+  return x;
 }
 
 /* double my_pow(double power, double value){} */
 
 /* double naive_pow(){} */
 
-/* double e_pow(){} */
+double e_pow(double value, double power){
+  return exp(power * log(value)); // e^ln(x) = x -> e^2*ln(x) = x^2
+}
 
 /* unsigned int fac(unsigned int value){ */
 
 /* } */
 
-/* unsigned int naive_fac(unsigned int value){} */
-
-
+unsigned int naive_fac(unsigned int value){
+  unsigned int result = 1;
+  for(int i = value; i>1; i--){
+    result *= i;
+  }
+  return result;
+}
 
 /* double tricosinelaw(double tri_len_a, double tri_len_b){ */
 
 /* } */
 
 
-double * binomialsolve(double sq_coeff, double lin_coeff, double third_coeff){
+double * binomialsolve(double a, double b, double c){
   static double r_vals[2];
     for(int i=0;i<=1;i++){
-      r_vals[i] = (-1.*lin_coeff + (2.*i-1)* sqrt(lin_coeff*lin_coeff-4.*sq_coeff*third_coeff))/(2.*sq_coeff);
+      r_vals[i] = ((-1. * b
+                    + (2. * i - 1)  // plus-minus sign
+                    * sqrt(b * b - 4. * a * c)) // determinant
+                   / (2. * a));
     }
   return r_vals;
+}
+
+double cosine(double x){
+  int i_max = 10e6;
+  double summand,result = 1.;
+  for(int i=1;i<i_max;i++){
+    summand = (-1.*x*x)/((2.*i)*((2.*i)-1.)) * summand; // done explicitly to avoid integer overflow
+    result += summand;
+  }
+  return result;
 }
 
 double ree_man(double s){
@@ -93,12 +128,8 @@ double ree_man(double s){
 }
 
 int main(void){
-  printf("%i\n",isprimep(2));
-  printf("%i\n",isprimep(3));
-  printf("%i\n",isprimep(15));
-  printf("%i\n",isprimep(17));
-  printf("%i\n",commondiv(20,10));
-  printf("%i\n",commondiv(20,3));
-  printf("%i\n",commondiv(18,24));
+  printf("%f\n",m_sqrt(5));
+  printf("%f\n",sqrt(5));
+
   return 0;
 }
