@@ -59,7 +59,7 @@ int * traverse(CELL ** board,           /* maze as an array */
       if(!(                                       // mind the inversion! below are the fail conditions
            x < 0 || y < 0 || x > dimx || y > dimy // out of bounds check
            || (x == origin[0] && y == origin[1])  // infinite recursion prevention
-           || board[x][y].origin[0] != -1)){       // checks if the cell is initialized
+           || board[x][y].origin[0] != -1)){      // checks if the cell is initialized
         switch(board[x][y].type){
         case 'F': // mission accomplished, maze exit found
           exit[0]=x;
@@ -118,10 +118,10 @@ void write_maze(CELL ** board, int dimx, int dimy, FILE * w){
 }
 
 int main(void){
-  FILE * maze = fopen("./res/maze.txt", "r"); // TODO: tr -d '\n' < mazebig2.txt > mazebig2t.txt
+  FILE * maze = fopen("./res/mazet.txt", "r"); // TODO: tr -d '\n' < mazebig2.txt > mazebig2t.txt
   FILE * smaz = fopen("./res/solve.txt", "w");
-  int bx = 100; // board's x and y dimensions
-  int by = 100;
+  int bx = 20; // board's x and y dimensions
+  int by = 20;
   int start[2]; // start coordinates
   CELL ** board = board_alloc(bx,by);
   cell_init(maze,board,start,bx,by); // defines starting coords

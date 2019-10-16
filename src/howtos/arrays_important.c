@@ -6,7 +6,7 @@
 
    In C, a pointer to an array cannot be used to
    determine array size. You either need to put the array
-   size into the array itself, or always define array size as
+   size value as an element of the array itself, or always define array size as
    a variable somewhere in your code, the latter happens quite often.
  */
 
@@ -19,14 +19,14 @@ void arr_printarr(int * in_array, int length){
 
 int main(){
   int myray[10] = { 5, 7, 10, 20, -2, -4, 5, 0, -20, 42};
-  int myray_length = ARR_LEN(myray); // WON'T WORK with pointer-pointers
+  int myray_length = ARR_LEN(myray); // THIS WORKS because it's a "true" array pointer
 
-  int * myray4 = myray; // will be used for a demonstration
+  int * myray4 = myray; // THIS WON'T WORK WITH sizeof, because some magic information is lost
 
   arr_printarr(myray,myray_length);
   printf("%i\n\n",myray_length);
 
-  printf("%i\n",(int) sizeof(myray)/sizeof(myray[0])); // basically what the macro does
+  printf("%i\n",(int) sizeof(myray)/sizeof(myray[0])); // basically what the macro ARR_LEN does
   printf("%i\n",(int) sizeof(myray[0])); // size of the first element
   printf("%i\n\n",(int) sizeof(myray));  // size of element * number of elements = array size
 

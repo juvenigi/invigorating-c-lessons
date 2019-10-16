@@ -10,12 +10,47 @@
 
 
 //for freeing arrays, just use free(array)
-//void setarr(int * array, int array_length, int value);
 
 void initarray(int ** pointer,int length){ // FIXME: something is cheesy here
   *pointer = (int *) malloc(sizeof(int) * length);
   return;
 }
+
+int * magicarr(int * array,int arr_len){
+  int * o_array = (int *) malloc(sizeof(int) * (arr_len+1));
+  o_array[0]=arr_len
+  for(int i=1; i<arr_len+1;i++){
+    o_array[i] = array[i-1];
+  }
+}
+
+int findmax_intarr(int * array,int length){
+  int max = 0;
+  for(int i=0;i<length;i++){
+    if(max<array[i]){max=array[i];}
+  }
+  return max;
+}
+
+int arr_equalp(int * arr_1, int * arr_2){
+  if(sizeof(*arr_1)!=sizeof(*arr_2)){
+    return 0;
+  }
+  for(int i=0;i<sizeof(*arr_1);i++){
+    if(arr_1[i]!=arr_2[i]){
+      return 0;
+    }
+  }
+  return 1;
+}
+
+void arr_seek_replace(int * array, int to_replace, int replacer){
+  for(int i=0;i<10;i++){
+    if(array[i]==to_replace){array[i]=replacer;}
+  }
+  // return void;
+}
+
 
 int * mylloc(int length){
   return (int *) malloc (sizeof(int)*length);
@@ -29,7 +64,7 @@ void print_int_arr(int mode, int arr_len, int * array){
   if(mode){printf("\n");}
 }
 
-void setintarr(int * array, int array_length, int value){
+void wall_intarr(int * array, int array_length, int value){
   for(int i=0; i<array_length; i++){
     array[i]=value;
   }
