@@ -1,8 +1,7 @@
 * Some shoddy C Programming
 
-  Enclosed is a collection of =.c= files (with occasional headers), unhelpful comments, as well as buggy code that does not even compile every time! I swear, I'm going to fix all of this this weekend, but no promises... All made to learn more about C, but it actually makes one learn more about gcc/gdb instead.
+  Enclosed is a collection of =.c= files (with occasional headers), unhelpful comments, as well as code that compiles most of the time. All made to learn more about C, but it actually makes one learn more about gcc/gdb.
 
-  If you are going to use any of this code for your personal project, I don't think your machine can handle the power of =goto= statments.
 
 * Contents
 - =ln=, where /n/ is a lesson number (l0 happened before the official courses started, basically me messing with code from Wikipedia) 
@@ -16,5 +15,3 @@
 -  proper headers and modules (put them into a library)
 -  setup make or cmake to compile code without a hassle
 -  follow the ISO C standard (redo some code with =-ansi=, I think)
-
-  
